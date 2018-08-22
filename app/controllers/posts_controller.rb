@@ -3,7 +3,7 @@ class PostsController < ProtectedController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = current_user.posts
 
     render json: @posts
   end
