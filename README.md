@@ -1,4 +1,6 @@
-Journal App Api
+Journal App API
+
+Check out the client [here](https://github.com/eabrigham/journal-client)
 
 A back end for a digital notebook/bullet journal where a user can write posts on a variety of topics.
 Implemented in Ruby on Rails.
