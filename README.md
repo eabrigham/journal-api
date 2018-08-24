@@ -1,14 +1,27 @@
 Journal App Api
 
-Concept: A digital notebook/bullet journal where a user can write posts on a variety of topics.
-The user can write posts on any topic and they show up in reverse chronological order on their
-main page. The titles and dates of posts are listed in a clickable sidebar. Additionally, a user can
-attach one or multiple ‘threads’ to a post, which act as filters for related topics. When a user 
-selects a given thread from the sidebar, all posts from that thread will display in the main page.
+A back end for a digital notebook/bullet journal where a user can write posts on a variety of topics.
+Implemented in Ruby on Rails.
 
-I plan to use Rails/Postgres for the back and and React/Javascript for the front end.
+ROUTES
+         Prefix Verb   URI Pattern                Controller#Action
+          posts GET    /posts(.:format)           posts#index
+                POST   /posts(.:format)           posts#create
+           post GET    /posts/:id(.:format)       posts#show
+                PATCH  /posts/:id(.:format)       posts#update
+                PUT    /posts/:id(.:format)       posts#update
+                DELETE /posts/:id(.:format)       posts#destroy
+          users GET    /users(.:format)           users#index
+           user GET    /users/:id(.:format)       users#show
+                PATCH  /users/:id(.:format)       users#update
+                PUT    /users/:id(.:format)       users#update
+        sign_up POST   /sign-up(.:format)         users#signup
+        sign_in POST   /sign-in(.:format)         users#signin
+       sign_out DELETE /sign-out(.:format)        users#signout
+change_password PATCH  /change-password(.:format) users#changepw
 
-In the second version of the website I plan to add the ability to upload photos using Amazon Web Services.
+[ERD](erd.pdf)
+
 
 A user can…
 * log in/out
@@ -17,15 +30,7 @@ A user can…
 * write a post
 * read their own past posts
 * title a post
-* see the date a post was created
-* edit a post (new date displays?)
-* delete a post
-* see all posts’ titles in the index in reverse chronological order
-* select a post to view from the index
-* mark a post as part of a thread(s)
-* select a thread to display all posts in that thread
-* create custom threads
 
-Version 2
-A user can…
-* attach an image to a post
+In the future, I plan to add labels which a user can tag
+their posts with, and then display only those posts with 
+a particular label.
